@@ -7,29 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="XfR-R9-oM0">
-            <objects>
-                <viewController id="41Z-jo-bpY" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Yb6-T3-F8v"/>
-                        <viewControllerLayoutGuide type="bottom" id="x5H-yP-D3O"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qTn-oS-2wD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="pth-RY-XyO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bhr-Ru-fxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="737" y="495"/>
-        </scene>
         <!--Item 1-->
         <scene sceneID="dzb-8j-dWB">
             <objects>
-                <viewController id="0d3-zC-GAK" sceneMemberID="viewController">
+                <viewController id="0d3-zC-GAK" customClass="ChatViewController" customModule="Clique" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1qB-KN-alt"/>
                         <viewControllerLayoutGuide type="bottom" id="b6b-HO-3Nw"/>
@@ -43,12 +24,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pta-Bp-mgm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="-165"/>
+            <point key="canvasLocation" x="758" y="163"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="R6p-8r-wTi">
             <objects>
-                <viewController id="ZaV-Od-UDs" sceneMemberID="viewController">
+                <viewController id="ZaV-Od-UDs" customClass="LoginViewController" customModule="Clique" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Des-XM-leV"/>
                         <viewControllerLayoutGuide type="bottom" id="VRW-CH-n3d"/>
@@ -93,6 +74,9 @@
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="ZaV-Od-UDs" eventType="touchUpInside" id="jVa-84-wYD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.19215686274509802" green="0.20392156862745098" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
@@ -144,7 +128,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="0d3-zC-GAK" kind="relationship" relationship="viewControllers" id="2VS-Qk-5xX"/>
-                        <segue destination="41Z-jo-bpY" kind="relationship" relationship="viewControllers" id="M5d-L3-Csb"/>
                         <segue destination="ZaV-Od-UDs" kind="presentation" id="xZo-wr-Uff"/>
                     </connections>
                 </tabBarController>
