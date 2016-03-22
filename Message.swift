@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Message: FireBaseType {
+struct Message: Equatable, FireBaseType {
     let kSender = "sender"
     let kReceiver = "receiver"
     let kText = "text"
@@ -41,4 +41,10 @@ struct Message: FireBaseType {
         self.text = text
         self.identifier = identifier
     }
+}
+
+func ==(lhs:Message, rhs: Message) -> Bool {
+    
+    return (lhs.text == rhs.text) && (lhs.sender == rhs.sender)
+    
 }

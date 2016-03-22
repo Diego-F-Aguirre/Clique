@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
                             print("Login failed. \(error)")
                         } else {
                             print("Logged in! \(authData)")
+//                            self.performSegueWithIdentifier("loginToChat", sender: nil)
                         }
                 })
             }
@@ -50,14 +51,18 @@ class LoginViewController: UIViewController {
     
     
     
-    /*
+    
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        super.prepareForSegue(segue, sender: sender)
+        
+        let navVC = segue.destinationViewController as! UITabBarController
+        let chatVC = navVC.viewControllers?.first as! ChatViewController
+        chatVC.senderId = FirebaseController.base.authData.uid
+        chatVC.senderDisplayName = ""
     }
-    */
+    
     
 }
